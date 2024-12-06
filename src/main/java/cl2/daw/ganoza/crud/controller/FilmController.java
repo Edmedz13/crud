@@ -16,12 +16,13 @@ public class FilmController{
     @Autowired
     FilmService filmService;
 
-    @GetMapping("/")
+    @GetMapping
     public String getFilms(Model model) {
         System.out.println("Holi");
         List<FilmDTO> list = filmService.getAllFilms();
-        model.addAttribute("film", list);
-        return "film-list";
+        list.forEach(filmDTO -> System.out.println(filmDTO.description()));
+        model.addAttribute("films", list);
+        return "list";
     }
 
 }

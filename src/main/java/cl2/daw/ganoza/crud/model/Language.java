@@ -1,6 +1,7 @@
 package cl2.daw.ganoza.crud.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "language")
+@Data
 public class Language {
 
     @Id
