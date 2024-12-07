@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+
+    <meta charset="UTF-8">
+    <title>Detalles de la Película</title>
+</head>
+<body>
+<h1>Detalles de la Película</h1>
+<div>
+    <p><strong>Título:</strong> <span th:text="${film.title}"></span></p>
+    <p><strong>Descripción:</strong> <span th:text="${film.description}"></span></p>
+    <p><strong>Año de Estreno:</strong> <span th:text="${film.releaseYear}"></span></p>
+    <p><strong>Idioma:</strong> <span th:text="${film.language.name}"></span></p>
+    <p><strong>Duracion de Alquiler:</strong> <span th:text="${film.rentalDuration}"></span></p>
+    <p><strong>Coste de Alquiler:</strong> <span th:text="${film.rentalRate}"></span></p>
+    <p><strong>Costo por reemplazo:</strong> <span th:text="${film.replacementCost}"></span></p>
+    <p><strong>Rating:</strong> <span th:text="${film.rating}"></span></p>
+
+</div>
+<!-- Enlace para regresar a la lista -->
+<a href="/films">Volver a la lista</a>
+</body>
+</html>

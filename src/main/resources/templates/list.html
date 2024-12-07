@@ -27,7 +27,7 @@
         <td th:text="${film.rentalDuration}"></td>
         <td>
             <!-- Enlace para ver los detalles de la película -->
-            <a href="#" th:href="@{/films/view/{id}(id=${film.filmId})}">Ver Detalles</a> |
+            <a href="#" th:href="@{/films/detail/{id}(id=${film.filmId})}">Ver Detalles</a> |
             <!-- Enlace para editar la película -->
             <a href="#" th:href="@{/films/edit/{id}(id=${film.filmId})}">Editar</a> |
             <!-- Enlace para eliminar la película -->

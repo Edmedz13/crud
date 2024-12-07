@@ -23,6 +23,4 @@ public class Language {
 
     @OneToMany(mappedBy = "language")
     private List<Film> films = new ArrayList<>();
-
-
 }

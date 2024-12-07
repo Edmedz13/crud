@@ -1,6 +1,7 @@
 package cl2.daw.ganoza.crud.controller;
 
 import cl2.daw.ganoza.crud.dto.FilmDTO;
+import cl2.daw.ganoza.crud.model.Film;
 import cl2.daw.ganoza.crud.service.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,11 +19,15 @@ public class FilmController{
 
     @GetMapping
     public String getFilms(Model model) {
-        System.out.println("Holi");
         List<FilmDTO> list = filmService.getAllFilms();
-        list.forEach(filmDTO -> System.out.println(filmDTO.description()));
         model.addAttribute("films", list);
         return "list";
+    }
+    @GetMapping("/detail/{id}")
+    public String getDetailedFilm(@PathVariable Integer id, Model model){
+        Film film = filmService.getDetailsOfFilm(id);
+        model.addAttribute("film", film);
+        return "detail";
     }
 
 }
