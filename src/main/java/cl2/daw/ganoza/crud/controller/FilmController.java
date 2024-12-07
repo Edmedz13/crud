@@ -30,4 +30,22 @@ public class FilmController{
         return "detail";
     }
 
+    @GetMapping("/edit/{id}")
+    public String updateFilmView(@PathVariable Integer id, Model model){
+        Film film = filmService.getDetailsOfFilm(id);
+        model.addAttribute("film", film);
+        return "edit";
+    }
+
+    @PostMapping("/edit-confirm")
+    public String updateFilm(@ModelAttribute Film film, Model model){
+        filmService.updateFilm(film);
+        return "redirect:/films";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteFilm(@PathVariable Integer id, Model model) {
+        filmService.deleteFilm(id);
+        return "redirect:/films";
+    }
 }

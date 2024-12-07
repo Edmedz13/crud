@@ -38,4 +38,11 @@ public class FilmService implements FilmServiceIF {
             throw new RuntimeException("No se encontró la pelicula");
         }
     }
+    public void updateFilm(Film film) {
+        filmRepository.save(film);
+    }
+
+    public void deleteFilm(Integer id) {
+        filmRepository.deleteById(id);
+    }
 }
